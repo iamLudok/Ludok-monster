@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/icon.png" alt="Icono de Ludok Monster" width="96">
+
 # Ludok Monster
 
 **App Android para llevar la cuenta de las latas de Monster Energy que has probado.**
@@ -21,6 +23,14 @@ Sin cuentas ni servidores: los datos viven en tu móvil y se copian a tu propio 
 </div>
 
 ---
+
+<p align="center">
+  <img src="docs/torre.webp" height="380" alt="La torre completa con las 45 latas y las 2 botellas, girando">
+  &nbsp;&nbsp;
+  <img src="docs/ultra-white.webp" height="380" alt="Monster Ultra White girando en el visor 3D">
+</p>
+
+<p align="center"><sub>Capturas del visor 3D de la app: la torre completa y la Ultra White.</sub></p>
 
 ## Índice
 
@@ -170,7 +180,7 @@ scripts/           exportación desde Blender, texturas, iconos y APK
 
 «Sala oscura», como las demás apps Ludok: interfaz monocroma, sin color de acento. El color lo
 ponen las latas. Las que no has probado se ven apagadas, en la lista y en la torre completa.
-El icono es una pirámide de tres latas, sin el logotipo de Monster.
+El icono es una lata con cara, sin el logotipo de Monster.
 
 ## Contribuir
 
