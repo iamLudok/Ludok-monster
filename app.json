@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "Ludok Monster",
+    "slug": "ludok-monster",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "ludokmonster",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.ludok.monster",
+      "adaptiveIcon": {
+        "backgroundColor": "#7A45C4",
+        "foregroundImage": "./assets/android-icon-foreground.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      "expo-sharing",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "backgroundColor": "#0a0a0c",
+          "imageWidth": 160
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ]
+  }
+}

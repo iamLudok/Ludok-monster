@@ -1,0 +1,59 @@
+# dependencias
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# proyecto nativo: lo regenera `expo prebuild`, no se versiona
+/android
+/ios
+.kotlin/
+*.orig.*
+
+# APK compilados
+*.apk
+
+# Firma del APK. Guárdala junto a las copias de seguridad: si se pierde, no se
+# puede instalar encima y hay que desinstalar, lo que BORRA los datos de la app.
+*.jks
+*.p8
+*.p12
+*.key
+*.keystore
+*.mobileprovision
+keystore.properties
+
+# Copias de seguridad (ludok-monster-AAAA-MM-DD.json): llevan tus datos. Nunca subir al repo.
+ludok-monster-*.json
+
+# Etiquetas, emblemas, botellas y miniaturas: son fotos de latas de Monster Energy, con su
+# marca y su diseño, así que no se publican. Se regeneran desde ../Monster (ver README).
+/public/
+/assets/miniaturas/
+
+# logs
+*.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+.metro-health-check*
+
+# typescript
+*.tsbuildinfo
+
+# entorno local
+.env*.local
+
+# editores
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.sw?
+
+AGENTS.md
+CLAUDE.md
