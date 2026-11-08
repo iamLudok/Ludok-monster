@@ -1,13 +1,13 @@
 <div align="center">
 
-<img src="assets/icon.png" alt="Icono de Ludok Monster" width="96">
+<img src="assets/icon.png" alt="Ludok Monster icon" width="96">
 
 # Ludok Monster
 
-**App Android para llevar la cuenta de las latas de Monster Energy que has probado.**
+**An Android app to keep track of the Monster Energy cans you've tried.**
 
-Cuáles, qué nota les pones, dónde las compraste y por cuánto, con cada lata en 3D.<br>
-Sin cuentas ni servidores: los datos viven en tu móvil y se copian a tu propio Nextcloud.
+Which ones, how you rate them, where you bought them and for how much, with every can in 3D.<br>
+No accounts, no servers: your data lives on your phone and is copied to your own Nextcloud.
 
 [![License: MIT](https://img.shields.io/github/license/iamLudok/Ludok-monster?style=flat-square&color=blue&label=license)](LICENSE)
 [![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white)](https://www.android.com/)
@@ -18,70 +18,85 @@ Sin cuentas ni servidores: los datos viven en tu móvil y se copian a tu propio 
 [![three.js](https://img.shields.io/badge/three.js-000000?style=flat-square&logo=threedotjs&logoColor=white)](https://threejs.org/)
 [![Blender](https://img.shields.io/badge/Blender-E87D0D?style=flat-square&logo=blender&logoColor=white)](https://www.blender.org/)
 
-[Funciones](#funciones) · [Instalación](#instalación) · [Copias de seguridad](#copias-de-seguridad) · [Contribuir](#contribuir) · [Licencia](#licencia)
+[Features](#features) · [Installation](#installation) · [Backups](#backups) · [Contributing](#contributing) · [License](#license)
 
 </div>
 
 ---
 
+> [!NOTE]
+> **A free fan project.** Ludok Monster is not affiliated with, endorsed by or sponsored by Monster
+> Energy Company. It's free, has no ads and accepts no payments or donations. "Monster Energy" and
+> its can designs are trademarks of their owners. If the trademark owner asks, the app will be
+> taken down.
+
 <p align="center">
-  <img src="docs/torre.webp" height="380" alt="La torre completa con las 45 latas y las 2 botellas, girando">
+  <img src="docs/torre.webp" height="380" alt="The full tower with all 45 cans and 2 bottles, spinning">
   &nbsp;&nbsp;
-  <img src="docs/ultra-white.webp" height="380" alt="Monster Ultra White girando en el visor 3D">
+  <img src="docs/ultra-white.webp" height="380" alt="Monster Ultra White spinning in the 3D viewer">
 </p>
 
-<p align="center"><sub>Capturas del visor 3D de la app: la torre completa y la Ultra White.</sub></p>
+<p align="center"><sub>The app's 3D viewer: the full tower and the Ultra White.</sub></p>
 
-## Índice
+## Table of Contents
 
-- [Funciones](#funciones)
-- [Qué sale del móvil](#qué-sale-del-móvil)
-- [Instalación](#instalación)
-- [Copias de seguridad](#copias-de-seguridad)
-- [Desarrollo](#desarrollo)
-- [Los modelos 3D](#los-modelos-3d)
-- [Estructura](#estructura)
-- [Diseño](#diseño)
-- [Contribuir](#contribuir)
-- [Licencia](#licencia)
+- [Features](#features)
+- [What Leaves Your Phone](#what-leaves-your-phone)
+- [Installation](#installation)
+- [Backups](#backups)
+- [Development](#development)
+- [The 3D Models](#the-3d-models)
+- [Structure](#structure)
+- [Design](#design)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Funciones
+## Features
 
-El catálogo trae **45 latas y 2 botellas**, modeladas en Blender a partir de seis fotos reales de
-cada una. No son texturas de imprenta: pueden verse reflejos de las fotos, y las medidas son
-aproximadas por formato (500, 473, 444 y 355 ml), no medidas de cada lata.
+The catalog has **45 cans and 2 bottles**, modeled in Blender from six real photos of each one.
+They aren't print textures: you may see reflections from the photos, and sizes are approximate per
+format (500, 473, 444 and 355 ml), not measured for each can.
 
-- **Visor 3D**: cada lata se gira y se acerca con los dedos, y funciona sin conexión.
-- **Probada**: sí o no, con la fecha. Valorar o comentar una lata la marca sola.
-- **Nota** de 1 a 10 y un comentario opcional.
-- **Compras**: precio (EUR, USD, GBP, JPY, CHF o MXN), país y ciudad. Varias por lata.
-- **Torre**: las latas que has probado forman una pirámide que crece según pruebas más. La vista
-  «Colección» enseña la torre completa, con las que faltan apagadas. Las botellas van en el suelo, a
-  los lados de la base.
-- **Números**: cuántas has probado de cada gama (Ultra, Juiced, Punch…), tu nota media, tus
-  favoritas, lo gastado por moneda, la más cara y la más barata, y los países.
-- **Mapa** de compras con OpenStreetMap: una chincheta por ciudad.
-- En Ajustes, **«Marcar todas como probadas»** para quien ya tiene la colección completa.
+- **3D viewer**: spin and zoom each can with your fingers, offline.
+- **Tried**: yes or no, with the date. Rating or commenting on a can marks it automatically.
+- **Rating** from 1 to 10 and an optional comment.
+- **Purchases**: price (EUR, USD, GBP, JPY, CHF or MXN), country and city. Several per can.
+- **Tower**: the cans you've tried form a pyramid that grows as you try more. The "Colección"
+  (collection) view shows the full tower, with the missing ones dimmed. Bottles stand on the floor,
+  on both sides of the base.
+- **Numbers**: how many you've tried from each range (Ultra, Juiced, Punch…), your average rating,
+  your favorites, spending per currency, the most and least expensive, and the countries.
+- **Map** of purchases with OpenStreetMap: one pin per city.
+- In Ajustes (Settings), **"Marcar todas como probadas"** (mark all as tried) for people who
+  already have the full collection.
 
-## Qué sale del móvil
+The app's interface is in Spanish.
 
-No hay servidor de Ludok Monster ni ninguna analítica, pero algunas funciones sí hablan con
-servicios externos:
+## What Leaves Your Phone
 
-> **Lo que sí sale del móvil:**
-> - **Nominatim** (`nominatim.openstreetmap.org`): la ciudad y el país de una compra, una sola vez
->   por ciudad, para situarla en el mapa. El resultado se guarda y no se vuelve a pedir.
-> - **OpenStreetMap** (`tile.openstreetmap.org`): los trozos de mapa de la zona que estás viendo.
-> - **unpkg** (`unpkg.com`): la librería Leaflet del mapa, al abrir el mapa.
-> - **Tu Nextcloud**, si activas la copia automática: la copia entera, con tu usuario y tu
->   contraseña de aplicación.
+There is no Ludok Monster server and no analytics, but some features do talk to external services:
 
-Tus notas, comentarios y precios nunca se envían a Nominatim ni a OpenStreetMap. El visor 3D y
-el resto de la app funcionan sin conexión.
+> **What does leave your phone:**
+> - **Nominatim** (`nominatim.openstreetmap.org`): the city and country of a purchase, once per
+>   city, to place it on the map. The result is stored and never requested again.
+> - **OpenStreetMap** (`tile.openstreetmap.org`): the map tiles for the area you're looking at.
+> - **unpkg** (`unpkg.com`): the Leaflet library for the map, when you open the map.
+> - **Your Nextcloud**, if you turn on automatic backup: the whole backup, with your user and your
+>   app password.
 
-## Instalación
+Your ratings, comments and prices are never sent to Nominatim or OpenStreetMap. The 3D viewer and
+the rest of the app work offline.
 
-Hace falta Node 22, JDK 17, Android SDK y `adb`.
+## Installation
+
+### From an APK
+
+Download the APK from the [latest release](https://github.com/iamLudok/Ludok-monster/releases/latest)
+and install it on your phone (Android will ask you to allow installing apps from that source).
+
+### From source
+
+You need Node 22, JDK 17, the Android SDK and `adb`.
 
 ```bash
 git clone https://github.com/iamLudok/Ludok-monster.git
@@ -89,116 +104,117 @@ cd Ludok-monster
 npm install
 ```
 
-> **Las texturas no están en el repositorio.** `public/` y `assets/miniaturas/` son fotos de las
-> latas, con la marca y el diseño de Monster Energy, así que no se publican. Se generan desde el
-> proyecto `../Monster` (ver [Los modelos 3D](#los-modelos-3d)); sin ellas la app no compila.
+> **The textures aren't in the repository.** `public/` and `assets/miniaturas/` are photos of the
+> cans, with Monster Energy's brand and design, so they aren't published. They're generated from
+> the `../Monster` project (see [The 3D Models](#the-3d-models)); without them the app doesn't
+> build.
 
 ```bash
-npm run android        # con el móvil conectado por adb (depuración USB)
+npm run android        # with the phone connected over adb (USB debugging)
 ```
 
-### Compilar el APK
+### Build the APK
 
 ```bash
-npm run build:apk                    # todas las arquitecturas
-./scripts/build-apk.sh --compartir   # solo arm64-v8a, para pasar a amigos
+npm run build:apk                    # all architectures
+./scripts/build-apk.sh --compartir   # arm64-v8a only, for sharing with friends
 # → android/app/build/outputs/apk/release/app-release.apk
 adb install -r android/app/build/outputs/apk/release/app-release.apk
 ```
 
-`release.jks` y `keystore.properties` firman la app y **están fuera del repositorio**. Si se
-pierden, la única forma de actualizar la app en un móvil es desinstalarla, y **desinstalar
-borra los datos**. Guárdalos junto a tus copias de seguridad.
+`release.jks` and `keystore.properties` sign the app and **are kept out of the repository**. If
+they're lost, the only way to update the app on a phone is to uninstall it, and **uninstalling
+deletes its data**. Keep them next to your backups.
 
-## Copias de seguridad
+## Backups
 
-La regla es **no perder datos nunca**:
+The rule is **never lose data**:
 
-- Todo vive en SQLite, en el almacenamiento privado de la app. Sin servidores ni cuentas.
-- **Copia en JSON** desde Ajustes, con el menú de compartir del sistema.
-- **Copia automática a tu propio Nextcloud**: al abrir la app, solo por WiFi, como mucho cada
-  12 h y un fichero por día (`ludok-monster-AAAA-MM-DD.json`).
-- Aviso en la lista de latas si nunca has hecho copia o llevas una semana sin ella.
-- La contraseña de Nextcloud **no viaja en las copias** (ver `src/types.ts`).
-- El catálogo de latas no está en la base de datos: viene con la app. Lo tuyo se enlaza con
-  él por el identificador de cada lata, así que una versión nueva con más latas no obliga a
-  migrar nada.
+- Everything lives in SQLite, in the app's private storage. No servers, no accounts.
+- **JSON backup** from Ajustes, through the system share menu.
+- **Automatic backup to your own Nextcloud**: when you open the app, on WiFi only, at most every
+  12 hours and one file per day (`ludok-monster-YYYY-MM-DD.json`).
+- A warning in the can list if you've never backed up or haven't for a week.
+- The Nextcloud password **never travels in backups** (see `src/types.ts`).
+- The can catalog isn't in the database: it ships with the app. Your data links to it by each
+  can's id, so a new version with more cans doesn't need any migration.
 
-## Desarrollo
+## Development
 
 ```bash
-npm run verify     # copia de ida y vuelta, reglas y migraciones, con un SQLite de escritorio
+npm run verify     # backup round trip, rules and migrations, against a desktop SQLite
 npm run typecheck
 ```
 
-`verify/` ejecuta el mismo código que corre en el móvil contra `@libsql/client`. También
-comprueba que cada lata del catálogo tiene su etiqueta, su versión HD y su modelo en `public/`.
+`verify/` runs the same code that runs on the phone against `@libsql/client`. It also checks that
+every can in the catalog has its label, its HD version and its model in `public/`.
 
-La app usa Expo SDK 57: consulta la documentación de
-[esa versión exacta](https://docs.expo.dev/versions/v57.0.0/), no la última.
+The app uses Expo SDK 57: check the docs for
+[that exact version](https://docs.expo.dev/versions/v57.0.0/), not the latest.
 
-## Los modelos 3D
+## The 3D Models
 
-Las 45 latas comparten la misma geometría, así que solo hay **cuatro modelos** (uno por tipo
-de anilla) en `public/modelos/`, y el visor le pone a cada lata su etiqueta, sus colores de
-tapa y anilla y su escala. Las botellas (gama «Botellas») no comparten forma: cada una lleva su
-GLB entero.
+All 45 cans share the same geometry, so there are only **four models** (one per tab type) in
+`public/modelos/`, and the viewer gives each can its label, its lid and tab colors and its scale.
+The bottles ("Botellas" range) don't share a shape: each one has its own full GLB.
 
-Todo se genera desde el proyecto Monster, que tiene que estar en `../Monster` (solo se lee, no
-se modifica):
+Everything is generated from the Monster project, which has to be at `../Monster` (it's only read,
+never modified):
 
 ```bash
-npm run assets:modelos      # Blender: los 4 GLB de las latas
-npm run assets:etiquetas    # Pillow: etiquetas, versiones HD, emblemas y miniaturas
-npm run assets:botellas     # Blender: las 2 botellas, cada una con su GLB propio
-python3 scripts/gen-assets.py   # iconos de la app
+npm run assets:modelos      # Blender: the 4 can GLBs
+npm run assets:etiquetas    # Pillow: labels, HD versions, emblems and thumbnails
+npm run assets:botellas     # Blender: the 2 bottles, each with its own GLB
+python3 scripts/gen-assets.py   # app icons
 ```
 
-Los comandos de Blender usan `blender` del `PATH`. Si lo tienes en otro sitio, indícalo con
-`BLENDER=/ruta/a/blender npm run assets:modelos`.
+The Blender commands use `blender` from your `PATH`. If it's somewhere else, point to it with
+`BLENDER=/path/to/blender npm run assets:modelos`.
 
-El visor (`src/components/Visor3D.tsx`) es un DOM Component de Expo con three.js: corre en un
-WebView y lee los ficheros de `public/`, que van dentro del APK.
+The viewer (`src/components/Visor3D.tsx`) is an Expo DOM Component with three.js: it runs in a
+WebView and reads the files in `public/`, which are bundled in the APK.
 
-## Estructura
+## Structure
 
 ```
-app/(tabs)/        Latas · Torre · Números · Ajustes
-app/lata/[slug]    ficha: visor 3D, probada, nota, comentario y compras
-app/compra         añadir o editar una compra
-app/mapa           mapa de compras
-src/lib/           datos y reglas (catalogo, latas, precio, estadisticas, torre, backup…)
-src/components/    Visor3D y MapaComprasDom (DOM Components), avisos y Nextcloud
-src/ui/            tema y primitivas
-public/            modelos GLB y etiquetas para el WebView (generado, fuera del repo)
-assets/            iconos, y miniaturas de las listas (generadas, fuera del repo)
-verify/            comprobaciones de la capa de datos
-scripts/           exportación desde Blender, texturas, iconos y APK
+app/(tabs)/        Latas · Torre · Números · Ajustes (cans, tower, numbers, settings)
+app/lata/[slug]    detail page: 3D viewer, tried, rating, comment and purchases
+app/compra         add or edit a purchase
+app/mapa           purchases map
+src/lib/           data and rules (catalog, cans, prices, stats, tower, backup…)
+src/components/    Visor3D and MapaComprasDom (DOM Components), warnings and Nextcloud
+src/ui/            theme and primitives
+public/            GLB models and labels for the WebView (generated, not in the repo)
+assets/            icons, and list thumbnails (generated, not in the repo)
+verify/            data layer checks
+scripts/           Blender export, textures, icons and APK
 ```
 
-## Diseño
+## Design
 
-«Sala oscura», como las demás apps Ludok: interfaz monocroma, sin color de acento. El color lo
-ponen las latas. Las que no has probado se ven apagadas, en la lista y en la torre completa.
-El icono es una lata con cara, sin el logotipo de Monster.
+"Sala oscura" (dark room), like the other Ludok apps: a monochrome interface with no accent color.
+The cans bring the color. The ones you haven't tried are dimmed, both in the list and in the full
+tower. The icon is a can with a face, without the Monster logo.
 
-## Contribuir
+## Contributing
 
-Los pull requests son bienvenidos. Mira [CONTRIBUTING.md](CONTRIBUTING.md) para preparar el
-entorno y ver las convenciones. Para avisar de una vulnerabilidad, sigue
-[SECURITY.md](SECURITY.md) en vez de abrir un issue público.
+Pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the development setup and
+conventions. To report a security vulnerability, follow [SECURITY.md](SECURITY.md) instead of
+opening a public issue.
 
-## Licencia
+## License
 
-El código se distribuye bajo la **licencia MIT**. Mira [LICENSE](LICENSE) para el texto completo.
+The code is distributed under the **MIT License**. See [LICENSE](LICENSE) for the full text.
 
-Ludok Monster es un proyecto personal sin relación con Monster Energy Company. «Monster
-Energy» y los diseños de sus latas son marcas de sus propietarios y no entran en la licencia.
+Ludok Monster is a personal fan project with no relation to Monster Energy Company. "Monster
+Energy" and its can designs are trademarks of their owners and are not covered by the license.
 
 ---
 
 <div align="center">
 
-Hecho por [Luken Iriondo](https://github.com/iamLudok) · Si Ludok Monster te resulta útil, dale una ⭐
+Made by [Luken Iriondo](https://github.com/iamLudok) · If Ludok Monster is useful to you, consider giving it a ⭐
+
+🇪🇸 [En castellano](https://iamludok.github.io/ludok-apps-web/apps/monster/)
 
 </div>

@@ -1,50 +1,50 @@
-# Política de seguridad
+# Security Policy
 
-## Versiones con soporte
+## Supported Versions
 
-Solo se mantiene la rama `main` y el APK de la última release. Los arreglos de seguridad salen
-en una release nueva; no se parchean versiones anteriores.
+Only the `main` branch and the APK from the latest release are maintained. Security fixes ship in
+a new release; older versions aren't patched.
 
-## Avisar de una vulnerabilidad
+## Reporting a Vulnerability
 
-**No abras un issue público.** Los issues los ve cualquiera, y describir el fallo ahí daría la
-receta para aprovecharlo antes de que haya un arreglo publicado y la gente haya actualizado.
+**Don't open a public issue.** Anyone can read issues, and describing the flaw there would hand
+out the recipe to exploit it before a fix is released and people have updated.
 
-En su lugar, avisa en privado:
+Report it privately instead:
 
-1. Ve a la pestaña **Security** del repositorio.
-2. Pulsa **Report a vulnerability**.
-3. Explica qué has encontrado, cómo reproducirlo y qué consecuencias tiene.
+1. Go to the repository's **Security** tab.
+2. Click **Report a vulnerability**.
+3. Explain what you found, how to reproduce it and what impact it has.
 
-Recibirás respuesta en el plazo de una semana. Si el fallo se confirma, se arregla, se publica una
-release y se te da el crédito en sus notas (salvo que prefieras no salir).
+You'll get a reply within a week. If the issue is confirmed, it gets fixed, a release is published
+and you're credited in its notes (unless you'd rather not be).
 
-## Qué entra
+## In Scope
 
-- Que la contraseña de Nextcloud salga de donde debe: en las copias exportadas, en logs, o
-  enviada a un servicio que no es el suyo.
-- Que una copia JSON manipulada pueda corromper o borrar datos al importarla, o ejecutar algo.
-- Que el visor 3D o el mapa (los dos corren en un WebView) carguen o ejecuten contenido que no
-  deben.
-- Fallos en cómo se habla con Nextcloud (credenciales, rutas, certificados).
-- Problemas en `scripts/build-apk.sh` o en la configuración de la firma.
+- The Nextcloud password ending up where it shouldn't: in exported backups, in logs, or sent to a
+  service other than its own.
+- A tampered JSON backup that corrupts or deletes data when imported, or executes anything.
+- The 3D viewer or the map (both run in a WebView) loading or executing content they shouldn't.
+- Flaws in how the app talks to Nextcloud (credentials, paths, certificates).
+- Problems in `scripts/build-apk.sh` or in the signing setup.
 
-## Qué no entra
+## Out of Scope
 
-- Fallos de servicios de terceros: Nominatim, OpenStreetMap, unpkg, Nextcloud, Android o Expo.
-  Avisa a sus responsables.
-- Ataques que requieren acceso previo al móvil desbloqueado, root o una copia del keystore.
-- Usar `http://` para Nextcloud: está permitido a propósito para servidores caseros y la app ya
-  avisa de que la contraseña viaja sin cifrar.
+- Flaws in third-party services: Nominatim, OpenStreetMap, unpkg, Nextcloud, Android or Expo.
+  Report them to their maintainers.
+- Attacks that require prior access to the unlocked phone, root, or a copy of the keystore.
+- Using `http://` for Nextcloud: it's allowed on purpose for home servers, and the app already
+  warns that the password travels unencrypted.
 
-## Protege tu instalación
+## Hardening Your Installation
 
-- **Usa una contraseña de aplicación de Nextcloud**, no la de tu cuenta (Ajustes personales →
-  Seguridad). Si pierdes el móvil, revócala desde ahí y nada más se ve afectado.
-- **Usa `https://`** para cualquier Nextcloud accesible desde fuera de tu red.
-- **Trata las copias JSON como datos personales**: llevan tus compras, con ciudades y fechas.
-- **Instala solo APKs de la release oficial** o compilados por ti. Un APK firmado con otra clave no
-  se instala encima, y desinstalar para ponerlo borra los datos.
-- **Si compilas tú**, guarda `release.jks` y `keystore.properties` fuera del repo (ya están en
-  `.gitignore`) y con permisos restringidos (`chmod 600 keystore.properties`).
-- Mantén Android actualizado.
+- **Use a Nextcloud app password**, not your account password (Personal settings → Security). If
+  you lose your phone, revoke it there and nothing else is affected.
+- **Use `https://`** for any Nextcloud reachable from outside your network.
+- **Treat JSON backups as personal data**: they contain your purchases, with cities and dates.
+- **Only install APKs from the official release** or built by yourself. An APK signed with another
+  key won't install on top, and uninstalling to install it deletes your data.
+- **If you build it yourself**, keep `release.jks` and `keystore.properties` out of the repo
+  (they're already in `.gitignore`) and with restricted permissions
+  (`chmod 600 keystore.properties`).
+- Keep Android up to date.
